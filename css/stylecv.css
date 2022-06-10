@@ -1,0 +1,171 @@
+body {
+  margin: 0;
+  text-align: center;
+}
+
+.cloud-top {
+  position: relative;
+  left: 300px;
+  margin-top: 100px;
+}
+
+.cloud-bottom {
+  position: absolute;
+  left: 300px;
+  top: 330px;
+}
+
+h1 {
+  margin-top: 25px;
+  font-family: 'Sacramento', cursive;
+  font-size: 6rem;
+  color: #fff;
+  background: linear-gradient(360deg, #a0e9ff 30%, #a162e8 50%, #f093b0 70%, #edca85 94%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 2;
+}
+.h1-skills{
+  margin-top: 40px;
+  font-family: 'Sacramento', cursive;
+  font-size: 6rem;
+  color: #fff;
+  background: linear-gradient(171deg, #a0e9ff 30%, #a162e8 50%, #f093b0 70%, #edca85 94%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 2;
+}
+/* fonts available */
+/* font-family: 'Montserrat', sans-serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Sacramento', cursive; */
+h2 {
+  margin: 10px;
+  font-family: 'Helvetica', Montserrat, sans-serif;
+  font-size: 2.5rem;
+  color: #3657AD;
+  font-weight: bolder;
+}
+
+h3 {
+  font-family: 'Helvetica', Montserrat, sans-serif;
+  font-size: 2rem;
+  color: #3657AD;
+}
+
+.h3-bottom {
+  font-family: 'Helvetica', Montserrat, sans-serif;
+  font-size: 3.5rem;
+  color: #fff;
+  background: linear-gradient(271deg, #a0e9ff 30%, #a162e8 50%, #f093b0 70%, #edca85 94%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 2;
+}
+
+.middle-container {
+  padding-top: 100px;
+  background-color: black;
+}
+
+.profile {
+  padding: 20px;
+}
+
+.para {
+  color: white;
+  font-size: 1.2rem;
+}
+
+.pop {
+  background-color: black;
+  margin: 0;
+}
+
+.skill-row {
+  line-height: 2;
+  text-align: left;
+  height: 200px;
+  width: 50%;
+  margin: 100px auto 50px auto;
+}
+
+.web-skill {
+  margin-right: 20px;
+  width: 25%;
+  float: left;
+}
+
+.java-skill {
+  width: 25%;
+  float: right;
+}
+
+.c-skill {
+  margin-right: 20px;
+  width: 25%;
+  float: left;
+}
+
+.block-skill {
+  width: 25%;
+  float: right;
+}
+
+.footer-link {
+  text-decoration: none;
+  color: #3657AD;
+  padding: 10px;
+  font-size: 1.4rem;
+}
+
+.bottom-container {
+  margin: 0;
+  padding: 40px;
+  background-color: black;
+}
+
+hr {
+  border-style: none;
+  border-top-style: dotted;
+  border-color: grey;
+  border-width: 10px;
+  width: 5%;
+}
+
+a {
+  position: relative;
+  color: #3657AD;
+  text-decoration: none;
+  font-size: 1.5em;
+  padding: 1.5em  0.75em;
+  margin: 0 auto;
+}
+
+a:hover {
+  color: #fff;
+}
+
+a::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #ffc4ff;
+  transform: scaleX(0);
+  /* transform-origin: top left; for left transition
+   transform-origin: bottom right; for right transition */
+  transition: transform 0.3s ease;
+}
+
+a:hover::before {
+  transform: scaleX(1);
+}
+
+.contact-me {
+  line-height: 2;
+  padding: 40px;
+}
