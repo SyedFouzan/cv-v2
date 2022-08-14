@@ -5,17 +5,18 @@ body {
 
 .cloud-top {
   position: relative;
-  left: 300px;
+  left: 600px;
   margin-top: 100px;
 }
 
 .cloud-bottom {
   position: absolute;
-  left: 300px;
+  left: 200px;
   top: 330px;
 }
 
 h1 {
+  margin: 0;
   font-family: 'Sacramento', cursive;
   font-size: 6rem;
   color: #fff;
@@ -24,7 +25,8 @@ h1 {
   -webkit-text-fill-color: transparent;
   line-height: 2;
 }
-.h1-skills{
+
+.h1-skills {
   margin-top: 40px;
   font-family: 'Sacramento', cursive;
   font-size: 6rem;
@@ -34,6 +36,7 @@ h1 {
   -webkit-text-fill-color: transparent;
   line-height: 2;
 }
+
 /* fonts available */
 /* font-family: 'Montserrat', sans-serif;
 font-family: 'Roboto', sans-serif;
@@ -89,6 +92,11 @@ h3 {
   margin: 100px auto 50px auto;
 }
 
+.Machinelearning-skill {
+  width: 25%;
+  float: right;
+}
+
 .web-skill {
   margin-right: 20px;
   width: 25%;
@@ -137,7 +145,7 @@ a {
   color: #3657AD;
   text-decoration: none;
   font-size: 1.5em;
-  padding: 1.5em  0.75em;
+  padding: 1.5em 0.75em;
   margin: 0 auto;
 }
 
