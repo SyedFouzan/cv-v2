@@ -189,7 +189,6 @@ a:hover::before {
 
   display: flex;
   flex-direction: column; /* <-- makes everything stack vertically */
-  align-items: flex-start; /* optional: keeps items left-aligned */
   gap: 12px; /* optional: adds space between links */
 }
 
