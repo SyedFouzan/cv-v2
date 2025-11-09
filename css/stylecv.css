@@ -184,11 +184,6 @@ a:hover::before {
 }
 
 .contact-me {
-  line-height: 2;
-  padding: 40px;
-
-  display: flex;
-  flex-direction: column; /* <-- makes everything stack vertically */
-  gap: 12px; /* optional: adds space between links */
+  line-height: 2; padding: 40px;
 }
 
