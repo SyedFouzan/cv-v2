@@ -1,104 +1,247 @@
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-    <style>
-        body {
-            background: #1e1f22;
-            color: #e6e6e6;
-            font-family: "Segoe UI", Arial, sans-serif;
-            margin: 40px auto;
-            max-width: 900px;
-            line-height: 1.8;
-        }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Strategy for Exams — Tips to Remember</title>
 
-        h1 {
-            text-align: center;
-            margin-top: 5px;
-            margin-bottom: 20px;
-            color: #ffffff;
-            letter-spacing: 1px;
-            font-weight: 600;
-        }
+  <style>
+    :root{
+      --bg: #0b0f14;
+      --panel: #0f172a;
+      --card: #111827;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #7c3aed;
+      --accent-2: #22d3ee;
+      --border: #1f2937;
+      --shadow: 0 10px 30px rgba(0,0,0,.4);
+      --radius: 16px;
+    }
 
-        p {
-            background: #2a2c31;
-            padding: 30px;
-            border-radius: 10px;
-            border-left: 6px solid #5b9df9;
-            font-size: 18px;
-            box-shadow: 0px 0px 18px rgba(0, 0, 0, 0.4);
-        }
+    /* Base */
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body{
+      margin:0;
+      background: radial-gradient(1200px 600px at 20% -10%, rgba(124,58,237,.20), transparent 60%),
+                  radial-gradient(900px 500px at 100% 0%, rgba(34,211,238,.12), transparent 50%),
+                  var(--bg);
+      color: var(--text);
+      font: 400 16px/1.7 ui-sans-serif, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
 
-        h1 + h1 {
-            margin-top: -10px;
-            font-size: 26px;
-            color: #9dc4ff;
-        }
+    .container{
+      max-width: 960px;
+      margin: 0 auto;
+      padding: clamp(20px, 4vw, 40px);
+    }
 
-        br {
-            line-height: 2.2;
-        }
+    /* Header */
+    header{
+      text-align: center;
+      margin-bottom: clamp(20px, 5vw, 40px);
+    }
+    .eyebrow{
+      display:inline-block;
+      padding: 6px 10px;
+      font-size: 12px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,0));
+    }
+    h1{
+      margin: 14px 0 6px;
+      font-weight: 800;
+      font-size: clamp(28px, 5vw, 44px);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      background: linear-gradient(90deg, var(--text), #c7d2fe 30%, #a78bfa 60%, #67e8f9 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    h2.subtitle{
+      margin: 0;
+      font-weight: 600;
+      color: var(--muted);
+      font-size: clamp(16px, 2.5vw, 18px);
+    }
 
-        b {
-            color: #ffd166;
-            font-weight: 600;
-        }
-    </style>
+    /* Card */
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0)) , var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .card__header{
+      display:flex; align-items:center; justify-content:space-between;
+      gap: 12px;
+      padding: clamp(16px, 3.5vw, 24px);
+      border-bottom: 1px solid var(--border);
+      background:
+        radial-gradient(500px 120px at 10% 0%, rgba(124,58,237,.08), transparent 60%),
+        radial-gradient(400px 120px at 90% 0%, rgba(34,211,238,.08), transparent 60%);
+    }
+    .card__title{
+      margin:0;
+      font-size: clamp(18px, 3.3vw, 22px);
+      font-weight:700;
+      color: #eef2ff;
+      letter-spacing:.01em;
+    }
+    .badge{
+      border: 1px solid var(--border);
+      color: var(--muted);
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      background: rgba(255,255,255,.02);
+    }
+
+    .card__body{
+      padding: clamp(18px, 3.8vw, 28px);
+    }
+
+    /* Lists */
+    ol{
+      counter-reset: item;
+      margin: 0;
+      padding-left: 1.2rem;
+    }
+    li{
+      list-style: decimal;
+      margin: 10px 0;
+      padding-left: 8px;
+    }
+    li::marker{
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .section{
+      margin-top: 24px;
+      padding-top: 16px;
+      border-top: 1px dashed var(--border);
+    }
+    .section h3{
+      margin: 0 0 8px;
+      font-size: 16px;
+      color: #cbd5e1;
+      letter-spacing:.02em;
+      text-transform: uppercase;
+    }
+
+    /* Emphasis blocks */
+    .note{
+      margin: 12px 0 6px;
+      padding: 10px 12px;
+      border-left: 3px solid var(--accent);
+      background: rgba(124,58,237,.08);
+      color: #e9d5ff;
+      border-radius: 8px;
+    }
+    .quote{
+      margin: 12px 0;
+      padding: 12px 14px;
+      border-left: 3px solid var(--accent-2);
+      background: rgba(34,211,238,.08);
+      color: #cffafe;
+      border-radius: 8px;
+      font-weight: 600;
+      letter-spacing:.01em;
+    }
+
+    /* Typography tweaks */
+    p{ margin: 0; }
+    strong{ color: #f0abfc; }
+    em{ color: #bae6fd; }
+
+    /* Footer */
+    footer{
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 12px;
+      text-align: center;
+    }
+
+    /* Accessibility & focus */
+    :focus-visible{
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+      border-radius: 6px;
+    }
+
+    /* Print (keeps it clean if printed) */
+    @media print{
+      body{ background: #fff; color: #111; }
+      .card, .card__header{ background: #fff; box-shadow: none; }
+      .quote, .note{ background: #f5f5f5; color: #111; }
+      h1{ color: #111; background: none; }
+    }
+  </style>
 </head>
 
 <body>
+  <div class="container">
+    <header>
+      <span class="eyebrow">Study Guide</span>
+      <h1>Tips to Remember</h1>
+      <h2 class="subtitle">Strategy for Exams</h2>
+    </header>
 
-<h1>Tips to Remember</h1>
-<h1>Strategy for Exams</h1>
+    <article class="card" role="article" aria-labelledby="list-heading">
+      <div class="card__header">
+        <h2 id="list-heading" class="card__title">Actionable Checklist</h2>
+        <span class="badge">Dark Mode</span>
+      </div>
 
-<p>
-1: Optimal sleep time for me is around 8 hours, with absolute minimum of around 4 hrs.
-<br><br>
-2: Start studying big tests several days in advance, even if briefly each day.
-<br><br>
-3: Attend tutorials or review sessions — they force your brain to engage.
-<br><br>
+      <div class="card__body">
+        <!-- General (1–3) -->
+        <div class="section">
+          <h3>General (1–3)</h3>
+          <ol>
+            <li>Optimal sleep time for me is around 8 hours, with an absolute minimum of around 4 hrs.</li>
+            <li>Try to start studying for any big tests well in advance (several days) even if for a short amount of time.</li>
+            <li>Attend tutorials or review sessions. The fact that they get you to think about the material is what counts.</li>
+          </ol>
+          <div class="note">Tips 1–3 are general.</div>
+        </div>
 
-<h1>Tips 1 - 3 are General</h1>
-<br>
+        <!-- Test Preparation (4–14) -->
+        <div class="section">
+          <h3>Test Preparation (4–14)</h3>
+          <ol start="4">
+            <li><strong>The big picture and organisation is the key.</strong></li>
+            <li>Create a schedule of study even if you don’t stick to it (getting the idea of everything you need to know). Write it down in bullet points and estimate how long it will take you. Otherwise you’ll spend too much time at the beginning and then skim (often the most important) later material due to lack of time.</li>
+            <li>Always try to look at previous tests <em>before</em> starting to study. Past tests written by the same professor give strong hints about how you should study. Don’t attempt to complete questions at first—take careful note of the types of questions.</li>
+            <li>Reading and understanding is <strong>not</strong> the same as replicating the content. A formula may make perfect sense when reading, but becomes hard when doing—it uses different parts of memory.
+              <div class="quote">“WHAT I CANNOT CREATE I DO NOT UNDERSTAND. Know how to solve every problem that has been solved.”</div>
+            </li>
+            <li>Collaborate with others—but near the end. Study alone first; in early stages others can be a distraction. Near the end, get together—peers will point out pitfalls and give you chances to teach.</li>
+            <li>Hang out with weaker students; explaining the material helps your own understanding.</li>
+            <li>Go to the professor 1-on-1; they may disclose something really special.</li>
+            <li>Study well in advance—<strong>this is the key</strong>. The brain needs time to absorb material. Things that look hard become easier with time. Allocate ~3 days for midterms and ~6 days for exams.</li>
+            <li>If things are going badly and you get too tired, in emergency situations, an energy drink can help—use with care.</li>
+            <li>For maths and similar subjects, <strong>EXERCISE &gt; READING</strong>. Study until reasonably ready, then:
+              <div class="note">The exercises fill the gaps—do as many as you can.</div>
+              <div class="note">Exercises will also force you back to read things you don’t know.</div>
+            </li>
+            <li>Study in places where other people study as well if you are lazy 😜.</li>
+          </ol>
+        </div>
+      </div>
+    </article>
 
-Tests-Preparation:
-<br><br>
-
-4: The Big Picture & Organisation is the key.
-<br><br>
-
-5: Create a study schedule (even imperfect). Listing everything prevents spending too much time on early topics and rushing critical material later.
-<br><br>
-
-6: Look at previous tests BEFORE you begin studying. They reveal how the professor thinks. Observe question patterns first — don’t solve immediately.
-<br><br>
-
-7: Reading ≠ Replicating. Knowing the formula ≠ Being able to apply it.
-<br>
-<b>“What I cannot create, I do not understand.”</b>
-<br><br>
-
-8: Study alone first. Near the end, collaborate — teaching others exposes understanding gaps and reinforces memory.
-<br><br>
-
-9: Work with weaker students; explaining concepts to them strengthens your mastery.
-<br><br>
-
-10: Meet the professor one-on-one — they often give critical insights not said in class.
-<br><br>
-
-11: Study well in advance. The brain needs time to absorb. Allocate ~3 days for midterms & ~6 days for finals.
-<br><br>
-
-12: In emergencies, an energy drink can help — it’s chemistry, not magic.
-<br><br>
-
-13: For math: <b>EXERCISE > READING</b>.
-Doing problems reveals exactly what you don’t understand.
-<br><br>
-
-14: Study in a place where others are studying if you slip into laziness 😜.
-</p>
-
+    <footer>
+      Built for clarity, contrast, and focus. Dark-mode friendly.
+    </footer>
+  </div>
 </body>
 </html>
